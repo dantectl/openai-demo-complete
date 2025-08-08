@@ -1,0 +1,25 @@
+integrations:
+  - name: nri-flex
+    config:
+      name: rabbitmq-overview
+      apis:
+        - event_type: RabbitMQOverviewSample
+          url: http://queueadmin:r%40bbitmQ232%21@b-f2e4c804-d6cf-41ad-84a1-66c11dd91c1a.mq.us-east-1.on.aws:15672/api/overview
+          headers:
+            Accept: application/json
+
+        - event_type: RabbitMQQueueSample
+          url: http://queueadmin:r%40bbitmQ232%21@b-f2e4c804-d6cf-41ad-84a1-66c11dd91c1a.mq.us-east-1.on.aws:15672/api/queues
+          headers:
+            Accept: application/json
+          remove_keys: [ "messages_details", "messages_ready_details", "messages_unacknowledged_details" ]
+
+        - event_type: RabbitMQConnectionsSample
+          url: http://queueadmin:r%40bbitmQ232%21@b-f2e4c804-d6cf-41ad-84a1-66c11dd91c1a.mq.us-east-1.on.aws:15672/api/connections
+          headers:
+            Accept: application/json
+
+
+http://b-f2e4c804-d6cf-41ad-84a1-66c11dd91c1a.mq.us-east-1.on.aws:15672/api/overview
+
+35373aaca09ab099cdc4bd5a44b33ab8FFFFNRAL
